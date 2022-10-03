@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+    .one{
+        background: linear-gradient(to top, rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+    }
+    #per{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="container-fluid one">
+        <div class="container">
+            <div class="row">
+                <h1 style="text-align: center; color:antiquewhite;" class="mt-5">Let's know your love percentage</h1>
+                <div class="col-lg-6">
+                    <input type="text" id="un1" class="form-control mt-5" placeholder="Enter your name" required>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" id="un2" class="form-control mt-5" placeholder="Enter your loved name" required>
+                </div>
+                <span id="nameerr" style="color: red;"></span>
+            </div>
+            <button class="btn btn-success mt-5" type="submit" onclick="percentage()">Check Your Bond</button>
+            <center><h1 id="per" style="color: white;" class="mt-5"></h1></center>
+        </div>
+    </div>
+</body>
+<script>
+    function percentage(){
+
+        var un=document.getElementById("un1").value;
+        var unn=document.getElementById("un2").value;
+        if(un == "" && unn == ""){
+            document.getElementById("nameerr").innerHTML="*Please enter the name.";
+        }
+        else if(un=="")
+        {
+            document.getElementById("nameerr").innerHTML="*Please enter the name.";
+        }
+        else if(unn=="")
+        {
+            document.getElementById("nameerr").innerHTML="*Please enter the name.";
+        }
+        else{
+            document.getElementById("nameerr").style.display="none";
+            var n= Math.random()*100;
+            document.getElementById("per").style.display="block";
+            document.getElementById("per").innerHTML= " your relationship bewteen : "+un+" and "+unn+" "+(Math.floor(n)+1)+"%";
+        }
+    }
+</script>
+</html>
